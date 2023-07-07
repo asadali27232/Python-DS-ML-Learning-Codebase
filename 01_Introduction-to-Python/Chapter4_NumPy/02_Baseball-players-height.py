@@ -2,28 +2,7 @@
 import numpy as np
 
 # Collapse the data lists to view main code
-height_in = [
-    74,
-    74,
-    72,
-    72,
-    73,
-    69,
-    69,
-    71,
-    76,
-    71,
-    73,
-    73,
-    74,
-    74,
-    69,
-    70,
-    73,
-    75,
-    78,
-    79,
-]
+height_in = [74, 74, 72, 72, 73, 69, 69, 71, 76, 71, 73, 73, 74, 74, 69, 70, 73, 75, 78, 79]
 
 # Create a numpy array from height_in: np_height_in
 np_height_in = np.array(height_in)
