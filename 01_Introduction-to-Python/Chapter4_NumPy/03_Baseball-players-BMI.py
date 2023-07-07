@@ -1,7 +1,7 @@
 # Import numpy
 import numpy as np
 
-weigh_lb = [
+weight_lb = [
     180,
     215,
     210,
