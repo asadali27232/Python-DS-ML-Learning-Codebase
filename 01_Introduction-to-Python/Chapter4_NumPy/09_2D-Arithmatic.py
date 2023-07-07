@@ -1,6 +1,7 @@
 # Import numpy package
 import numpy as np
 
+# Collapse the data lists to view main code
 baseball = [
     [74.0, 180.0, 22.99],
     [74.0, 215.0, 34.69],
