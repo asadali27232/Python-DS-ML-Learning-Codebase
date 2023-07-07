@@ -1,7 +1,7 @@
 # Import numpy
 import numpy as np
 
-# Collaps the data lists to view main code
+# Collapse the data lists to view main code
 height_in = [
     74,
     74,
