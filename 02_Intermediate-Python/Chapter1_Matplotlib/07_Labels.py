@@ -308,5 +308,3 @@ plt.title(title)
 
 # After customizing, display the plot
 plt.show()
-
-help(plt)
