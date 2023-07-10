@@ -6,7 +6,7 @@ import pandas as pd
 sales = pd.read_csv("04_Data-Manipulation-with-pandas\Chapter2_ Aggregating-DataFrames\sales.csv", index_col=0, header=0)
 
 # For each store type, aggregate weekly_sales: get min, max, mean, and median
-sales_stats = sales.groupby("type")["weekly_sales"].agg([np.max, np.mean, np.median])
+sales_stats = sales.groupby("type")["weekly_sales"].agg([np.min, np.max, np.mean, np.median])
 
 # Print sales_stats
 print(sales_stats)
