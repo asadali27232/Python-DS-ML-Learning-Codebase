@@ -1,7 +1,7 @@
 # Import pandas using the alias pd
 import pandas as pd
 
-# Read 'homlessness.csv' into a DataFrame as homelessness
+# Read 'sales.csv' into a DataFrame as homelessness
 sales = pd.read_csv("04_Data-Manipulation-with-pandas\Chapter2_ Aggregating-DataFrames\sales.csv", index_col=0, header=0)
 
 # A DataFrame called sales_1_1 which contains the sales data for department 1 of store 1

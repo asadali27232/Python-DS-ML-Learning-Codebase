@@ -1,6 +1,6 @@
 import pandas as pd
 
-# Read 'homlessness.csv' into a DataFrame as homelessness
+# Read 'temperatures.csv' into a DataFrame as homelessness
 temperatures = pd.read_csv("04_Data-Manipulation-with-pandas\Chapter3_Slicing-and-Indexing-DataFrames\\temperatures.csv", index_col=0, header=0)
 
 # Look at temperatures
