@@ -79,6 +79,45 @@ def matrix_multiplier(*matrices):
 
 A = np.array([[1], [2]])
 B = np.array([[1, 3]])
-print(A.shape)
-print(B.shape)
+
 print(matrix_multiplier(A, B))
+
+# ----------------------------------------------------------------- #
+
+# Task 4: Matrix Transpose
+print("\nTask 4:")
+
+A = np.array([[1, 2, 3], [4, 5, 6]])
+A_T = A.T
+print(A, A_T, sep="\n")
+
+# ----------------------------------------------------------------- #
+
+# Task 5: Matrix Inverse
+print("\nTask 5:")
+
+
+def matrix_inverser(matrix):
+    if matrix.shape[0] != matrix.shape[1]:
+        raise ValueError("Provided matrix must be a square matrix")
+    elif np.linalg.det(matrix) == 0:
+        raise ValueError("Determinent of the provided matrix must be 0")
+    else:
+        return np.linalg.inv(matrix)
+
+
+A = np.array([[1, 9, 3], [4, 5, 6], [7, 8, 9]])
+
+print(matrix_inverser(A))
+
+# ----------------------------------------------------------------- #
+
+# Task 6: Determinant and Eigenvalues
+print("\nTask 6:")
+
+A = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+A_det = np.linalg.det(A)
+print(A_det)
+
+A_EgVal = np.linalg.eigvals(A)
+print(A_EgVal)
