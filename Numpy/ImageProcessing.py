@@ -18,4 +18,49 @@ my_iamge_T = np.transpose(my_iamge, (1, 0, 2))
 plt.imsave("images/my_iamge_T.png", my_iamge_T)
 
 plt.imshow(my_iamge)
+# plt.waitforbuttonpress()
+
+# ------------------------------------------------------------------- #
+# Task 1: Convert Images to same dimensions 2500 x 2000
+butterfly1 = plt.imread("images/Butterflies/butterfly1.jpg")
+butterfly2 = plt.imread("images/Butterflies/butterfly2.jpg")
+butterfly3 = plt.imread("images/Butterflies/butterfly3.jpg")
+
+plt.subplots(1, 3, figsize=(10, 5))
+
+plt.subplot(1, 3, 1)
+plt.imshow(butterfly1)
+plt.title(f"({butterfly1.shape[0]}x{butterfly1.shape[1]})")
+
+plt.subplot(1, 3, 2)
+plt.imshow(butterfly2)
+plt.title(f"({butterfly2.shape[0]}x{butterfly2.shape[1]})")
+
+plt.subplot(1, 3, 3)
+plt.imshow(butterfly3)
+plt.title(f"({butterfly3.shape[0]}x{butterfly3.shape[1]})")
+
+plt.suptitle("Images with Different Dimensions", fontsize=16)
+plt.waitforbuttonpress()
+
+# Croping
+butterfly1 = butterfly1[:2500, :2000, :]
+butterfly2 = butterfly2[:2500, :2000, :]
+butterfly3 = butterfly3[:2500, :2000, :]
+
+plt.subplots(1, 3, figsize=(10, 5))
+
+plt.subplot(1, 3, 1)
+plt.imshow(butterfly1)
+plt.title(f"({butterfly1.shape[0]}x{butterfly1.shape[1]})")
+
+plt.subplot(1, 3, 2)
+plt.imshow(butterfly2)
+plt.title(f"({butterfly2.shape[0]}x{butterfly2.shape[1]})")
+
+plt.subplot(1, 3, 3)
+plt.imshow(butterfly3)
+plt.title(f"({butterfly3.shape[0]}x{butterfly3.shape[1]})")
+
+plt.suptitle("Images Croped to Same Deimensions")
 plt.waitforbuttonpress()
