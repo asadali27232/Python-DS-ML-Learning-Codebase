@@ -29,6 +29,21 @@ butterfly3 = plt.imread("images/Butterflies/butterfly3.jpg")
 
 plt.subplots(1, 3, figsize=(10, 5))
 
+plt.subplot(1, 3, 1)
+plt.imshow(butterfly1)
+plt.title(f"({butterfly1.shape[0]}x{butterfly1.shape[1]})")
+
+plt.subplot(1, 3, 2)
+plt.imshow(butterfly2)
+plt.title(f"({butterfly2.shape[0]}x{butterfly2.shape[1]})")
+
+plt.subplot(1, 3, 3)
+plt.imshow(butterfly3)
+plt.title(f"({butterfly3.shape[0]}x{butterfly3.shape[1]})")
+
+plt.suptitle("Images with Different Dimensions", fontsize=16)
+plt.waitforbuttonpress()
+
 butterfly1 = butterfly1[:2500, :2000, :]
 butterfly2 = butterfly2[:2500, :2000, :]
 butterfly3 = butterfly3[:2500, :2000, :]
