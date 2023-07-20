@@ -163,7 +163,7 @@ print("\nStep 7: Broadcasting")
 # Broadcasting in NumPy
 array_1 = np.array([1, 2, 3])
 array_2 = np.array([[4], [5], [6]])
-result = array_1 + array_2         # Broadcasting the addition operation
+result = array_1 + array_2  # Broadcasting the addition operation
 print(result)
 
 # ------------------------------------------------------ #
@@ -188,13 +188,38 @@ print(np.sum(result, axis=1))
 print("\nStep 8: Array Manipulation")
 # Array manipulation in NumPy
 my_array = np.array([[1, 2], [3, 4], [5, 6]])
-reshaped_array = np.reshape(my_array, (2, 3))           # Reshaping the array
+reshaped_array = np.reshape(my_array, (2, 3))  # Reshaping the array
 print(reshaped_array)
-concatenated_array = np.concatenate((my_array, my_array), axis=0)   # Concatenating arrays
+concatenated_array = np.concatenate((my_array, my_array), axis=0)  # Concatenating arrays
 print(concatenated_array)
 
 # ------------------------------------------------------ #
 
+print("\nTask 17:")
+# Given a 1D array arr = np.array([1, 2, 3, 4, 5, 6]), reshape it into a 2D array with shape (2, 3).
+arr = np.array([1, 2, 3, 4, 5, 6])
+arr_reshaped = np.reshape(arr, (2, 3))
+print(arr_reshaped)
 
+print("\nTask 18:")
+# Given two 2D arrays a = np.array([[1, 2, 3], [4, 5, 6]]) and b = np.array([[7, 8, 9], [10, 11, 12]]), concatenate them vertically.
+a = np.array([[1, 2, 3], [4, 5, 6]])
+b = np.array([[7, 8, 9], [10, 11, 12]])
+a_b_concat = np.concatenate((a, b), axis=1)  # == a_b_vstack = np.hstack((a, b))
+a_b_concat = np.concatenate((a, b), axis=0)  # == a_b_vstack = np.vstack((a, b))
+print(a_b_concat)
+
+print("\nTask 19:")
+# Given an array my_array = np.array([1, 2, 3, 4, 5, 6]), split it into three equal-sized parts.
+my_array = np.array([1, 2, 3, 4, 5, 6])
+my_array = np.reshape(my_array, (3, 2))
+part1 = my_array[0]
+part2 = my_array[1]
+part3 = my_array[2]
+print(part1, part2, part3, sep="\n")
+
+my_array = np.array([1, 2, 3, 4, 5, 6])
+part1, part2, part3 = np.split(my_array, indices_or_sections=3)
+print(part1, part2, part3, sep="\n")
 
 # ------------------------------------------------------ #
