@@ -165,3 +165,36 @@ array_1 = np.array([1, 2, 3])
 array_2 = np.array([[4], [5], [6]])
 result = array_1 + array_2         # Broadcasting the addition operation
 print(result)
+
+# ------------------------------------------------------ #
+
+print("\nTask 15:")
+#  Given a 2D array arr = np.array([[1, 2, 3], [4, 5, 6]]) and a scalar n = 2, multiply arr by n using broadcasting.
+arr = np.array([[1, 2, 3], [4, 5, 6]])
+n = 2
+result = arr * np.array([n])
+print(result)
+
+print("\nTask 16:")
+# Given a 1D array arr = np.array([1, 2, 3, 4]) and a 2D array weights = np.array([[0.25], [0.5], [0.75], [1]]), calculate the weighted sum using broadcasting.
+arr = np.array([1, 2, 3, 4])
+weights = np.array([[0.25], [0.5], [0.75], [1]])
+result = arr * weights
+print(result)
+print(np.sum(result, axis=1))
+
+# ------------------------------------------------------ #
+
+print("\nStep 8: Array Manipulation")
+# Array manipulation in NumPy
+my_array = np.array([[1, 2], [3, 4], [5, 6]])
+reshaped_array = np.reshape(my_array, (2, 3))           # Reshaping the array
+print(reshaped_array)
+concatenated_array = np.concatenate((my_array, my_array), axis=0)   # Concatenating arrays
+print(concatenated_array)
+
+# ------------------------------------------------------ #
+
+
+
+# ------------------------------------------------------ #
