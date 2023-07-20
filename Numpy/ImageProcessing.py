@@ -17,3 +17,5 @@ plt.imsave("images/my_iamge_rot90.png", my_iamge_rot90)
 my_iamge_T = np.transpose(my_iamge, (1, 0, 2))
 plt.imsave("images/my_iamge_T.png", my_iamge_T)
 
+plt.imshow(my_iamge)
+plt.waitforbuttonpress()
