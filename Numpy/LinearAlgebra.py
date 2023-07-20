@@ -63,6 +63,22 @@ print(matrix_subtracter(A, B, C))
 print("\nTask 3:")
 
 
-def matrix_multiplier(matrices):
+def matrix_multiplier(*matrices):
     if not matrices:
         raise ValueError("At least one matrix must be provided.")
+
+    for i, matrix in enumerate(matrices):
+        if i == 0:
+            result = matrix
+        elif result.shape[1] != matrix.shape[0]:
+            raise ValueError(f"Matrix {i+1} is not capible to be multiplied with the previous result.")
+        else:
+            result = result @ matrix
+    return result
+
+
+A = np.array([[1], [2]])
+B = np.array([[1, 3]])
+print(A.shape)
+print(B.shape)
+print(matrix_multiplier(A, B))
