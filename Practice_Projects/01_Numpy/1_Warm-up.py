@@ -24,10 +24,29 @@ print("\nTask 1:")
 # Create a 2D array of shape (3, 5) filled with random integer values ranging from 1 to 100 using the np.random.randint() function.
 random_array = np.random.randint(1, 101, (3, 5))
 print(random_array)
-
 rg = np.random.default_rng()
 random_array = rg.integers(1, 101, (3, 5))
 print(random_array)
+
+print("\nTask 2:")
+# Create a 1D array of shape (5,) filled with zeros.
+zeros_array = np.zeros((5), dtype=int)
+print(zeros_array)
+
+print("\n Task 3:")
+# Create a 2D array of shape (3, 4) filled with ones.
+ones_array = np.array((3, 4))
+print(ones_array)
+
+print("\nTask 4:")
+# Create a 1D array containing the numbers from 0 to 9.
+zero_to_nine = np.arange(0, 10, 1)
+print(zero_to_nine)
+
+# Create a 1D array containing the odd numbers from 1 to 10.
+print("\nTask 5:")
+odd_array = np.arange(1, 10, 2)
+print(odd_array)
 
 # ------------------------------------------------------ #
 
@@ -49,9 +68,21 @@ print(my_array)
 
 # ------------------------------------------------------ #
 
-print("\nTask 2:")
+print("\nTask 6:")
 # Given a 2D array, extract the last column using slicing.
 print(my_array[:, -1])
+
+print("\nTask 7:")
+# Given a 2D array arr, access and print the element in the second row, third column.
+print(my_array[1, 2])
+
+print("\nTask 8:")
+# Given a 2D array arr, access and print the first column.
+print(my_array[:, 0])
+
+print("\nTask 9")
+# Given a 2D array arr, access and print a subarray consisting of the first two rows and last two columns.
+print(my_array[:2, 1:])
 
 # ------------------------------------------------------ #
 
@@ -66,14 +97,14 @@ print(result)
 
 # ------------------------------------------------------ #
 
-print("\nTask 3:")
+print("\nTask 10:")
 # Given two arrays a = np.array([2, 4, 6]) and b = np.array([1, 3, 5]), calculate the element-wise product of a and b.
 a = np.arange(2, 7, 2)  # [2 4 6]
 b = np.arange(1, 6, 2)  # [1 3 5]
 print(a)
 print(b)
 product = a * b
-mat_product = np.matmul(a, b) # a @ b -> @ stands for Matrix Multiplication
+mat_product = np.matmul(a, b)  # a @ b -> @ stands for Matrix Multiplication
 print(product)
 print(mat_product)
 
@@ -82,11 +113,11 @@ print(mat_product)
 print("\nStep 6: Array Aggregations and Statistical Operations")
 # Array aggregations and statistical operations
 my_array = np.array([1, 2, 3, 4, 5])
-print(np.sum(my_array))             # Sum of all elements
-print(np.mean(my_array))            # Mean of all elements
-print(np.min(my_array))             # Minimum value
-print(np.max(my_array))             # Maximum value
-print(np.std(my_array))             # Standard deviation
+print(np.sum(my_array))  # Sum of all elements
+print(np.mean(my_array))  # Mean of all elements
+print(np.min(my_array))  # Minimum value
+print(np.max(my_array))  # Maximum value
+print(np.std(my_array))  # Standard deviation
 
 # ------------------------------------------------------ #
 
@@ -99,4 +130,3 @@ print("Range:", data_range)
 print("Median:", np.median(np_arr))
 
 # ------------------------------------------------------ #
-
