@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Task 0: Reading and writing image in and from numpy array
+# Task 1: Image Rotation
 my_iamge = plt.imread("images/my_image.jpeg")
 
 # Image's pixel information
@@ -22,7 +22,7 @@ plt.imshow(my_iamge)
 
 # ------------------------------------------------------------------- #
 
-# Task 1: Convert Images to same dimensions 2500 x 2000
+# Task 2: Resize Images
 butterfly1 = plt.imread("images/Butterflies/butterfly1.jpg")
 butterfly2 = plt.imread("images/Butterflies/butterfly2.jpg")
 butterfly3 = plt.imread("images/Butterflies/butterfly3.jpg")
@@ -44,7 +44,6 @@ plt.title(f"({butterfly3.shape[0]}x{butterfly3.shape[1]})")
 plt.suptitle("Images with Different Dimensions", fontsize=16)
 plt.waitforbuttonpress()
 
-# Croping
 butterfly1 = butterfly1[:2500, :2000, :]
 butterfly2 = butterfly2[:2500, :2000, :]
 butterfly3 = butterfly3[:2500, :2000, :]
@@ -66,36 +65,38 @@ plt.waitforbuttonpress()
 
 # ------------------------------------------------------------------- #
 
-# Task 2: Convert Image to Grayscale
+# Task 3: Convert Image to Grayscale
 avg_color_b1 = np.average(butterfly1, axis=2)
 avg_color_b2 = np.average(butterfly2, axis=2)
 avg_color_b3 = np.average(butterfly3, axis=2)
 
-copy_b1 = np.copy(butterfly1)
-copy_b2 = np.copy(butterfly2)
-copy_b3 = np.copy(butterfly3)
+gray_b1 = np.copy(butterfly1)
+gray_b2 = np.copy(butterfly2)
+gray_b3 = np.copy(butterfly3)
 
-copy_b1[..., 0] = avg_color_b1
-copy_b1[..., 1] = avg_color_b1
-copy_b1[..., 2] = avg_color_b1
+gray_b1[..., 0] = avg_color_b1
+gray_b1[..., 1] = avg_color_b1
+gray_b1[..., 2] = avg_color_b1
 
-copy_b2[..., 0] = avg_color_b2
-copy_b2[..., 1] = avg_color_b2
-copy_b2[..., 2] = avg_color_b2
+gray_b2[..., 0] = avg_color_b2
+gray_b2[..., 1] = avg_color_b2
+gray_b2[..., 2] = avg_color_b2
 
-copy_b3[..., 0] = avg_color_b3
-copy_b3[..., 1] = avg_color_b3
-copy_b3[..., 2] = avg_color_b3
+gray_b3[..., 0] = avg_color_b3
+gray_b3[..., 1] = avg_color_b3
+gray_b3[..., 2] = avg_color_b3
 
 
 plt.subplot(1, 3, 1)
-plt.imshow(copy_b1)
+plt.imshow(gray_b1)
 
 plt.subplot(1, 3, 2)
-plt.imshow(copy_b2)
+plt.imshow(gray_b2)
 
 plt.subplot(1, 3, 3)
-plt.imshow(copy_b3)
+plt.imshow(gray_b3)
 
 plt.suptitle("Images Converted to Gray Scale")
 plt.waitforbuttonpress()
+
+# ------------------------------------------------------------------- #
