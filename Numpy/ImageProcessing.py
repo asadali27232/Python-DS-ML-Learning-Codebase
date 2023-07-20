@@ -65,14 +65,6 @@ plt.suptitle("Images Croped to Same Deimensions")
 plt.waitforbuttonpress()
 
 # ------------------------------------------------------------------- #
-butterfly1 = plt.imread("images/Butterflies/butterfly1.jpg")
-butterfly2 = plt.imread("images/Butterflies/butterfly2.jpg")
-butterfly3 = plt.imread("images/Butterflies/butterfly3.jpg")
-
-# Croping
-butterfly1 = butterfly1[:2500, :2000, :]
-butterfly2 = butterfly2[:2500, :2000, :]
-butterfly3 = butterfly3[:2500, :2000, :]
 
 # Task 2: Convert Image to Grayscale
 avg_color_b1 = np.average(butterfly1, axis=2)
@@ -95,18 +87,15 @@ copy_b3[..., 0] = avg_color_b3
 copy_b3[..., 1] = avg_color_b3
 copy_b3[..., 2] = avg_color_b3
 
+
 plt.subplot(1, 3, 1)
 plt.imshow(copy_b1)
+
 plt.subplot(1, 3, 2)
 plt.imshow(copy_b2)
+
 plt.subplot(1, 3, 3)
 plt.imshow(copy_b3)
+
 plt.suptitle("Images Converted to Gray Scale")
 plt.waitforbuttonpress()
-
-
-
-
-
-
-
