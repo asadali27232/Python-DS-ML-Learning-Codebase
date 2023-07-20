@@ -108,6 +108,18 @@ mat_product = np.matmul(a, b)  # a @ b -> @ stands for Matrix Multiplication
 print(product)
 print(mat_product)
 
+print("\nTask 11:")
+# Given an array x = np.array([1, 2, 3]), calculate the square of each element and store the result in a new array.
+x = np.array([1, 2, 3])
+xx = x * x
+print(xx)
+
+print("\n Task 12:")
+# Given an array y = np.array([4, 5, 6]), calculate the exponential of each element and store the result in a new array.
+y = np.array([4, 5, 6])
+y = np.exp(y)
+print(y)
+
 # ------------------------------------------------------ #
 
 print("\nStep 6: Array Aggregations and Statistical Operations")
@@ -121,12 +133,35 @@ print(np.std(my_array))  # Standard deviation
 
 # ------------------------------------------------------ #
 
-print("\nTask 4:")
+print("\nTask 13:")
 # Given an array data = np.array([7, 9, 11, 13, 15]), calculate the range (difference between the maximum and minimum values) and the median.
-
 np_arr = np.array([7, 9, 11, 13, 15])
 data_range = np.max(np_arr) - np.min(np_arr)
 print("Range:", data_range)
 print("Median:", np.median(np_arr))
 
+print("\nTask 13")
+#  Given an array grades = np.array([85, 92, 78, 90, 88]), calculate the average grade.
+grades = np.array([85, 92, 78, 90, 88])
+avg_grade = np.average(grades)
+print(avg_grade)
+
+print("\nTask 12:")
+# Given an array heights = np.array([175, 160, 180, 165, 170]), find the tallest person's height.
+heights = np.array([175, 160, 180, 165, 170])
+tallest_person = np.max(heights)
+print(tallest_person)
+
+print("\nTask 14:")
+# Given an array prices = np.array([10.99, 8.99, 12.99, 9.99]), calculate the total price.
+prices = np.array([10.99, 8.99, 12.99, 9.99])
+total_price = np.sum(prices)
+
 # ------------------------------------------------------ #
+
+print("\nStep 7: Broadcasting")
+# Broadcasting in NumPy
+array_1 = np.array([1, 2, 3])
+array_2 = np.array([[4], [5], [6]])
+result = array_1 + array_2         # Broadcasting the addition operation
+print(result)
