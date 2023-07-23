@@ -42,3 +42,24 @@ marketing = pd.read_csv("marketing.csv", parse_dates=["date_served", "date_subsc
 
 # Add a DoW column
 marketing["DoW"] = marketing["date_subscribed"].dt.dayofweek
+
+# Group by date_served and count number of unique user_id's
+daily_users = marketing.groupby(["date_served"])["user_id"].nunique()
+
+# Print head of daily_users
+print(daily_users.head())
+
+import matplotlib.pyplot as plt
+
+# Plot daily_subscribers
+daily_users.plot()
+
+# Include a title and y-axis label
+plt.title("Daily users")
+plt.ylabel("Number of users")
+
+# Rotate the x-axis labels by 45 degrees
+plt.xticks(rotation=45)
+
+# Display the plot
+plt.show()
