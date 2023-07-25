@@ -1,5 +1,6 @@
 # In this chapter, you will learn about common marketing metrics and how to calculate them using pandas. You will also visualize your results and practice user segmentation.
 import pandas as pd
+import matplotlib.pyplot as plt
 
 marketing = pd.read_csv("marketing.csv", parse_dates=["date_served", "date_subscribed", "date_canceled"])
 
@@ -55,3 +56,30 @@ subscribers = marketing[marketing["converted"] == True].groupby("date_served")["
 # Calculate the conversion rate per day
 daily_conversion_rate = subscribers / total
 print(daily_conversion_rate)
+
+# Create a bar chart using language_conversion_rate DataFrame
+language_conversion_rate.plot()
+
+# Add a title and x and y-axis labels
+plt.title("Conversion rate by language\n", size=16)
+plt.xlabel("Language", size=14)
+plt.ylabel("Conversion rate (%)", size=14)
+
+# Display the plot
+plt.show()
+
+# Group by date_served and count unique users
+total = marketing.groupby(["date_served"])["user_id"].nunique()
+
+# Group by date_served and calculate subscribers
+subscribers = marketing[marketing["converted"] == True].groupby(["date_served"])["user_id"].nunique()
+
+# Calculate the conversion rate for all languages
+daily_conversion_rates = subscribers / total
+
+# Reset index to turn the results into a DataFrame
+daily_conversion_rate = pd.DataFrame(daily_conversion_rates.reset_index(0))
+
+# Rename columns
+daily_conversion_rate.columns = ["date_served", "conversion_rate"]
+
