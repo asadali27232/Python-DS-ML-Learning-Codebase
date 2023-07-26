@@ -84,12 +84,11 @@ daily_conversion_rate = pd.DataFrame(daily_conversion_rates.reset_index(0))
 daily_conversion_rate.columns = ["date_served", "conversion_rate"]
 
 # Create a line chart using daily_conversion_rate DataFrame
-daily_conversion_rate.plot('date_subscribed', 
-                           'conversion_rate')
+daily_conversion_rate.plot("date_subscribed", "conversion_rate")
 
-plt.title('Daily conversion rate\n', size = 16)
-plt.ylabel('Conversion rate (%)', size = 14)
-plt.xlabel('Date', size = 14)
+plt.title("Daily conversion rate\n", size=16)
+plt.ylabel("Conversion rate (%)", size=14)
+plt.xlabel("Date", size=14)
 
 # Set the y-axis to begin at 0
 plt.ylim(0)
