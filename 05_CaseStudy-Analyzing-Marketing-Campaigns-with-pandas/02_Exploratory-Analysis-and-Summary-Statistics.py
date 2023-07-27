@@ -95,4 +95,3 @@ plt.ylim(0)
 
 # Display the plots
 plt.show()
-
