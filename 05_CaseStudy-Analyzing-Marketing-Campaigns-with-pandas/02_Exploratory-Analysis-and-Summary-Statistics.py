@@ -80,7 +80,7 @@ daily_conversion_rates = subscribers / total
 # Reset index to turn the results into a DataFrame
 daily_conversion_rate = pd.DataFrame(daily_conversion_rates.reset_index(0))
 
-# Rename columns
+#Rename columns
 daily_conversion_rate.columns = ["date_served", "conversion_rate"]
 
 # Create a line chart using daily_conversion_rate DataFrame
