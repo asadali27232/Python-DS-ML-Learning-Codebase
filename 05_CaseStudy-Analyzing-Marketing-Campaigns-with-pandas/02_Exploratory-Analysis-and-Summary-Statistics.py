@@ -54,7 +54,7 @@ total = marketing.groupby("date_served")["user_id"].nunique()
 subscribers = marketing[marketing["converted"] == True].groupby("date_served")["user_id"].nunique()
 
 # Calculate the conversion rate per day
-daily_conversion_rate = subscribers / total
+daily_conversion_rate= subscribers / total
 print(daily_conversion_rate)
 
 # Create a bar chart using language_conversion_rate DataFrame
