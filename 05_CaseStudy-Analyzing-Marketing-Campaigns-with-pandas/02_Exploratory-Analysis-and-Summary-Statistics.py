@@ -95,5 +95,3 @@ plt.ylim(0)
 
 # Display the plots
 plt.show()
-
-# Add day of week column to marketing
