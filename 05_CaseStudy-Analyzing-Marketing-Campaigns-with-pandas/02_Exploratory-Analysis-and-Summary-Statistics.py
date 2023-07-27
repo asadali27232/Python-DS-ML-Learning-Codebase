@@ -93,5 +93,5 @@ plt.xlabel("Date", size=14)
 # Set the y-axis to begin at 0
 plt.ylim(0)
 
-# Display the plot
+# Display the plots
 plt.show()
