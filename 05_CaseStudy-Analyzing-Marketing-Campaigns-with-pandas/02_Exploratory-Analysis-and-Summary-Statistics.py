@@ -84,7 +84,7 @@ daily_conversion_rate = pd.DataFrame(daily_conversion_rates.reset_index(0))
 daily_conversion_rate.columns = ["date_served", "conversion_rate"]
 
 # Create a line chart using daily_conversion_rate DataFrame
-daily_conversion_rate.plot("date_subscribed", "conversion_rate")
+daily_conversion_rate.plot("date_served", "conversion_rate")
 
 plt.title("Daily conversion rate\n", size=16)
 plt.ylabel("Conversion rate (%)", size=14)
@@ -111,3 +111,14 @@ plt.ylabel("Users")
 plt.legend(loc="upper right", labels=channel_age_df.columns.values)
 plt.show()
 
+# Count the subs by subscribing channel and day
+retention_total = marketing.groupby(["date_subscribed", "subscribing_channel"])["user_id"].nunique()
+
+# Print results
+print(retention_total.head())
+
+# Sum the retained subs by subscribing channel and date subscribed
+retention_subs = marketing[marketing['is_retained'] == True].groupby(['date_subscribed', 'subscribing_channel'])['user_id'].nunique()
+
+# Print results
+print(retention_subs.head())
