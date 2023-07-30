@@ -1,3 +1,4 @@
+import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
@@ -81,3 +82,26 @@ plt.title("Conversion rate by day of week\n")
 plt.ylim(0)
 plt.show()
 
+# Isolate the rows where marketing channel is House Ads
+house_ads = marketing[marketing["marketing_channel"] == "House Ads"]
+
+# Calculate conversion by date served, and language displayed
+conv_lang_channel = conversion_rate(house_ads, ["date_served", "language_displayed"])
+
+# Unstack conv_lang_channel
+conv_lang_df = pd.DataFrame(conv_lang_channel.unstack(level=1))
+
+# Use your plotting function to display results
+plotting_conv(conv_lang_df)
+
+# Add the new column is_correct_lang
+house_ads["is_correct_lang"] = np.where(house_ads["language_displayed"] == house_ads["language_preferred"], "Yes", "No")
+
+# Groupby date_served and correct_language
+language_check = house_ads.groupby(["date_served", "is_correct_lang"])["user_id"].count()
+
+# Unstack language_check and fill missing values with 0's
+language_check_df = pd.DataFrame(language_check.unstack(level=1)).fillna(0)
+
+# Print results
+print(language_check_df)
