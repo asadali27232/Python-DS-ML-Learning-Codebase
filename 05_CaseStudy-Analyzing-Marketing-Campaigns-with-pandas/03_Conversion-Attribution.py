@@ -54,3 +54,30 @@ age_group_df = pd.DataFrame(age_group_conv.unstack(level=1))
 
 # Plot the results
 plotting_conv(age_group_df)
+
+# Calculate conversion rate by date served and channel
+daily_conv_channel = conversion_rate(marketing, ["date_served", "marketing_channel"])
+
+print(daily_conv_channel.head())
+
+# Unstack daily_conv_channel and convert it to a DataFrame
+daily_conv_channel = pd.DataFrame(daily_conv_channel.unstack(level=1))
+
+# Plot results of daily_conv_channel
+plotting_conv(daily_conv_channel)
+
+# Add day of week column to marketing
+marketing["DoW_served"] = marketing["date_served"].dt.dayofweek
+
+# Calculate conversion rate by day of week
+DoW_conversion = conversion_rate(marketing, ["DoW_served", "marketing_channel"])
+
+# Unstack channels
+DoW_df = pd.DataFrame(DoW_conversion.unstack(level=1))
+
+# Plot conversion rate by day of week
+DoW_df.plot()
+plt.title("Conversion rate by day of week\n")
+plt.ylim(0)
+plt.show()
+
