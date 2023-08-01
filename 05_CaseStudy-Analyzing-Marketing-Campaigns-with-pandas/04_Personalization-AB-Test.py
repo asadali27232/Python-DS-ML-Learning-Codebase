@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+import scipy.stats as stats
 
 marketing = pd.read_csv("marketing.csv", parse_dates=["date_served", "date_subscribed", "date_canceled"])
 
@@ -50,3 +51,31 @@ def lift(a, b):
 
 # Print lift() with control and personalization as inputs
 print(lift(control, personalization))
+
+
+def ab_segmentation(segment):
+    # Build a for loop for each segment in marketing
+    for subsegment in np.unique(marketing[segment].values):
+        print(subsegment)
+
+        # Limit marketing to email and subsegment
+        email = marketing[(marketing["marketing_channel"] == "Email") & (marketing[segment] == subsegment)]
+
+        subscribers = email.groupby(["user_id", "variant"])["converted"].max()
+        subscribers = pd.DataFrame(subscribers.unstack(level=1))
+        control = subscribers["control"].dropna()
+        personalization = subscribers["personalization"].dropna()
+
+        # Assuming `df` is the DataFrame containing the data
+        control = control.astype(float)
+        personalization = personalization.astype(float)
+
+        print("lift:", lift(control, personalization))
+        print("t-statistic:", stats.ttest_ind(control, personalization), "\n\n")
+
+
+# Use ab_segmentation on language displayed
+ab_segmentation("language_displayed")
+
+# Use ab_segmentation on age group
+ab_segmentation("age_group")
