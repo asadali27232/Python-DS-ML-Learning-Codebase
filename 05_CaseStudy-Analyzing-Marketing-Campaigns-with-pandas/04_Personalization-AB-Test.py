@@ -35,3 +35,18 @@ personalization = subscribers_df["personalization"].dropna()
 
 print("Control conversion rate:", control.value_counts().get(True, 0) / control.count())
 print("Personalization conversion rate:", personalization.value_counts().get(True, 0) / personalization.count())
+
+
+def lift(a, b):
+    # Calcuate the mean of a and b
+    a_mean = np.mean(a)
+    b_mean = np.mean(b)
+
+    # Calculate the lift using a_mean and b_mean
+    lift = (b_mean - a_mean) / a_mean
+
+    return str(round(lift * 100, 2)) + "%"
+
+
+# Print lift() with control and personalization as inputs
+print(lift(control, personalization))
