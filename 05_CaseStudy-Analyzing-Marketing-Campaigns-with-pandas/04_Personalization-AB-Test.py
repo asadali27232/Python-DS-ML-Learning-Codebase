@@ -3,7 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import scipy.stats as stats
 
-fff
+ffff 
 marketing = pd.read_csv("marketing.csv", parse_dates=["date_served", "date_subscribed", "date_canceled"])
 
 # Subset the DataFrame
