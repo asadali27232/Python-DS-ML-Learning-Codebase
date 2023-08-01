@@ -36,3 +36,5 @@ personalization = subscribers_df["personalization"].dropna()
 print("Control conversion rate:", control.value_counts().get(True, 0) / control.count())
 print("Personalization conversion rate:", personalization.value_counts().get(True, 0) / personalization.count())
 
+
+
