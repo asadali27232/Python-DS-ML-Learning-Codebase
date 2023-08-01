@@ -15,3 +15,23 @@ alloc.plot(kind="bar")
 plt.title("Personalization test allocation")
 plt.ylabel("# participants")
 plt.show()
+
+print(email.tail(20))
+
+subscribers = email.groupby(["user_id", "variant"]).max()
+print(subscribers.head())
+subscribers_df = pd.DataFrame(subscribers.unstack(level=1))
+print(subscribers_df.head())
+
+# Group marketing by user_id and variant
+subscribers = email.groupby(["user_id", "variant"])["converted"].max()
+subscribers_df = pd.DataFrame(subscribers.unstack(level=1))
+
+# Drop missing values from the control column
+control = subscribers_df["control"].dropna()
+
+# Drop missing values from the personalization column
+personalization = subscribers_df["personalization"].dropna()
+
+print("Control conversion rate:", control.value_counts().get(True, 0) / control.count())
+print("Personalization conversion rate:", personalization.value_counts().get(True, 0) / personalization.count())
