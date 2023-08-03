@@ -1,14 +1,14 @@
 import pickle as pkl
 import pandas as pd
 
-with open("ward.p", "rb") as f:
+with open("licenses.p", "rb") as f:
     object = pkl.load(f)
 
 df = pd.DataFrame(object)
-df.to_csv(r"wards.csv")
+df.to_csv(r"licenses.csv")
 
-with open("census.p", "rb") as f:
+with open("business_owners.p", "rb") as f:
     object = pkl.load(f)
 
 df = pd.DataFrame(object)
-df.to_csv(r"census.csv")
+df.to_csv(r"biz_owners.csv")
