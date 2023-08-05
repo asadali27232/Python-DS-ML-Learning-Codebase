@@ -1,8 +1,8 @@
 import pickle as pkl
 import pandas as pd
 
-with open("stations.p", "rb") as f:
+with open("zip_demo.p", "rb") as f:
     object = pkl.load(f)
 
 df = pd.DataFrame(object)
-df.to_csv(r"stations.csv")
+df.to_csv(r"zip_demo.csv")
