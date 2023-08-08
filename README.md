@@ -1,7 +1,6 @@
 # Python-DS-ML-Learning-Codebase
 A comprehensive repository to acquire the skills necessary to excel in the field of Data Science and Machine Learning
 
-
 ## Motive
 Throughout this track, I will focus on using Python for data science, starting with the basics and progressing to more advanced topics such as machine learning. I’ll cover a broad range of areas, including data manipulation, visualization, and analysis, using popular Python libraries such as pandas, Seaborn, Matplotlib, and scikit-learn.
 
