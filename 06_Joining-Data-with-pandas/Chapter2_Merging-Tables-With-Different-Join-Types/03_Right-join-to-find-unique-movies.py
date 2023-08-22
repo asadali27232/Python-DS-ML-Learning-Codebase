@@ -1,8 +1,8 @@
 import pandas as pd
 
-movies = pd.read_csv('movies.csv')
-scifi_movies = pd.read_csv('scifi_movies.csv')
-action_movies = pd.read_csv('action_movies.csv')
+movies = pd.read_csv("movies.csv")
+scifi_movies = pd.read_csv("scifi_movies.csv")
+action_movies = pd.read_csv("action_movies.csv")
 
 # Merge action_movies to the scifi_movies with right join
 action_scifi = action_movies.merge(scifi_movies, on="movie_id", how="right", suffixes=("_act", "_sci"))
